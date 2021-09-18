@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"strings"
@@ -30,22 +29,13 @@ func main() {
 	}
 	ndirs := strings.Split(wd, "/")
 	for range ndirs {
-		if _, err := os.Stat(path); os.IsNotExist(err) {
-			err := nvim([]string{})
+		fullFilePath := path + fileName
+		if _, err := os.Stat(fullFilePath); !os.IsNotExist(err) {
+			err := nvim([]string{"-S", fullFilePath})
 			if err != nil {
 				panic(err)
 			}
 			break
-		} else {
-			fullFilePath := path + fileName
-			fmt.Println(fullFilePath)
-			if _, err := os.Stat(fullFilePath); !os.IsNotExist(err) {
-				err := nvim([]string{"-S", fullFilePath})
-				if err != nil {
-					panic(err)
-				}
-				break
-			}
 		}
 		if path == "./" {
 			path = "../"
@@ -53,5 +43,5 @@ func main() {
 			path += "../"
 		}
 	}
-
+	nvim([]string{})
 }
