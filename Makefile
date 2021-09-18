@@ -3,7 +3,7 @@ pkgname="e"
 ## build: compile bt executable in current directory from source
 build:
 	go build -o "${pkgname}" main.go
-	sudo cp ./"${pkgname}" "${GOROOT}"/bin/"${pkgname}"
+	mv ./"${pkgname}" "${GOROOT}"/bin/"${pkgname}"
 
 
 .PHONY: help

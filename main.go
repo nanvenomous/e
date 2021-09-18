@@ -21,6 +21,14 @@ func nvim(args []string) error {
 }
 
 func main() {
+	args := os.Args[1:]
+	if len(args) > 0 {
+		err := nvim(args)
+		if err != nil {
+			panic(err)
+		}
+		os.Exit(0)
+	}
 	fileName := "Session.vim"
 	path := "./"
 	wd, err := os.Getwd()
@@ -35,7 +43,7 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
-			break
+			return
 		}
 		if path == "./" {
 			path = "../"
