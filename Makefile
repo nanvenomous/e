@@ -1,10 +1,10 @@
 pkgname="e"
 
 ## build: compile bt executable in current directory from source
-build:
+install:
 	go build -o "${pkgname}" main.go
 	mv ./"${pkgname}" "${GOROOT}"/bin/"${pkgname}"
-	rm /usr/bin/vi
+	rm -f /usr/bin/vi
 	ln -s "${GOROOT}"/bin/"${pkgname}" /usr/bin/vi
 
 

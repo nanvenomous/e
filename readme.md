@@ -5,7 +5,7 @@ run nvim sessions from any subdirectory of your project
 ```
 git clone git@github.com:mrgarelli/nvimSessionRunner.git
 cd nvimSessionRunner
-make build
+sudo make install
 ```
 
 * default executable name in Makefile is
