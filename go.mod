@@ -1,4 +1,4 @@
-module e
+module github.com/nanvenomous/e
 
 go 1.18
 

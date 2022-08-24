@@ -1,10 +1,10 @@
 /*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+Copyright © 2022 nanvenomous mrgarelli@gmail.com
 
 */
 package main
 
-import "e/cmd"
+import "github.com/nanvenomous/e/cmd"
 
 func main() {
 	cmd.Execute()

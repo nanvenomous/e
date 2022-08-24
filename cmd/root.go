@@ -5,11 +5,12 @@ Copyright © 2022 nanvenomous mrgarelli@gmail.com
 package cmd
 
 import (
-	"e/system"
 	"fmt"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/nanvenomous/e/system"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
