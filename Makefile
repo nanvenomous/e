@@ -8,6 +8,9 @@ install:
 	rm -f /usr/bin/vi
 	ln -s "${GOROOT}"/bin/"${pkgname}" /usr/bin/vi
 
+visualize:
+	go-callvis -focus "cmd" -group pkg,type -ignore "github.com/spf13,os,fmt,errors,path,strings,strconv"  ./...
+
 
 .PHONY: help
 all: help
