@@ -3,8 +3,9 @@ run nvim sessions from any subdirectory of your project
 
 # Installation
 ```
-git clone git@github.com:mrgarelli/nvimSessionRunner.git
-cd nvimSessionRunner
+git clone https://github.com/nanvenomous/e.git
+cd e
+make
 sudo make install
 ```
 
