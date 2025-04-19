@@ -1,12 +1,16 @@
 # nvim Session runner
 run nvim sessions from any subdirectory of your project
 
-# Installation
+calling `e` is the equivalent of
+```bash
+nvim -S ./Session.nvim
 ```
-git clone https://github.com/nanvenomous/e.git
-cd e
-make
-sudo make install
+but it will also search up the filetree for session files
+
+# Installation
+
+```
+go install github.com/nanvenomous/e@latest
 ```
 
 * default executable name in Makefile is

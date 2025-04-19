@@ -1,0 +1,19 @@
+# https://taskfile.dev
+version: '3'
+
+vars:
+  PKGNAME: e
+
+tasks:
+  default:
+    cmds:
+      - go build -o "{{.PKGNAME}}" main.go
+  install:
+    cmds:
+      - mv ./"{{.PKGNAME}}" /usr/local/bin/"{{.PKGNAME}}"
+  uninstall:
+    cmds:
+      - rm -f /usr/local/bin/"{{.PKGNAME}}"
+  visualize:
+    cmds:
+      - 'go-callvis -focus "cmd" -group pkg,type -ignore "github.com/spf13,os,fmt,errors,path,strings,strconv"  ./...'
